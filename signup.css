@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Poppins;
+    margin: 0;
+}
+
+.email-input,
+.name-input {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    outline: none;
+    /* max-width: 300px; */
+}
+
+.password-input {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    outline: none;
+    /* padding-right: 40px; */
+}
+
+
+.signup-button {
+    padding: 0.75rem 1.5rem;
+    /* max-width: 140px; */
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+}
+
+.terms-services {
+    margin: 14px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.signup-container {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    width: 100%;
+    max-width: 360px;
+    box-sizing: border-box;
+}
+
+.Signup-container {
+    width: 423px;
+    /* max-width: 40%; */
+    padding: 40px 35px;
+    background: #FFF;
+    border-radius: 5px;
+    /* box-shadow: 10px 10px 20px rgba(, green, blue, alpha); */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.password-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: -9px;
+    top: 17px;
+    cursor: pointer;
+}
