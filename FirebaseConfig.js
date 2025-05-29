@@ -20,6 +20,10 @@ const auth = getAuth(app);
 document.addEventListener("DOMContentLoaded", function () {
     const signupButton = document.getElementById("signup-button");
 
+    // if  maloom krta  hai ke signupButton variable main koi value hai y nhi.
+    // agar hai tu yeh addeventlistener chal jayega 
+    // otherwise it will show nulll
+
     if (signupButton) {
         signupButton.addEventListener("click", function (event) {
             event.preventDefault();
@@ -32,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Signed up 
                     const user = userCredential.user;
                     window.location.href = "login.html";
+                    alert("Signup sucessfull")
                     // ...
                 })
                 .catch((error) => {
@@ -49,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 
-
 const loginButton = document.getElementById("submit");
 
 if (loginButton) {
@@ -59,86 +63,25 @@ if (loginButton) {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
+        if (!email || !password) {
+            alert("Email and password cannot be empty.");
+            return;
+        }
+
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                window.location.href = "Dashboard.html"
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                // console.error("error signing in" , errorCode , errorMessage)
             });
 
-
     })
+} else {
+    // console.error("login button not found");
 }
-
-
-
-
-
-
-
-
-
-
-// Signup function
-
-// signupButton.addEventListener("click", (event) => {
-//     event.preventDefault()
-//     const email = document.getElementById("email").value;
-//     const password = document.getElementById("password").value;
-
-
-
-//     createUserWithEmailAndPassword(auth, email, password)
-//         .then((userCredential) => {
-//             // Signed up
-//             const user = userCredential.user;
-//             // ...
-//         })
-//         .catch((error) => {
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             // ..
-//         });
-
-//     // console.log(signupButton);
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-// Login function//
-
-
-
-// const submit = document.getElementById("submt");
-// submit.addEventListener("click", function (e) {
-//     e.preventDefault();
-
-//     const email = document.getElementById("email").value;
-//     const password = document.getElementById("password").value;
-
-//     signInWithEmailAndPassword(auth, email, password)
-//         .then((userCredential) => {
-//             // Signed in
-//             const user = userCredential.user;
-//             // ...
-//         })
-//         .catch((error) => {
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             console.log("Error editing");
-
-//         });
-// })

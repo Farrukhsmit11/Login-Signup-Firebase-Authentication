@@ -12,4 +12,3 @@ toggleButton.addEventListener("click", function () {
     }
 
 });
-
