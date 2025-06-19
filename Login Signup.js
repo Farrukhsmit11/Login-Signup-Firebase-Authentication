@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyDyPsgWePL-K1nWB5Pv3oD07Sk2vFmXEfQ",
     authDomain: "login-signup-authenticat-abda5.firebaseapp.com",
@@ -16,6 +15,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+
+// LOGIN SIGNUP CODE AUTHENTICATION
 
 document.addEventListener("DOMContentLoaded", function () {
     const signupButton = document.getElementById("signup-button");
@@ -59,29 +60,33 @@ const loginButton = document.getElementById("submit");
 if (loginButton) {
     loginButton.addEventListener("click", function (event) {
         event.preventDefault();
-
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        if (!email || !password) {
-            alert("Email and password cannot be empty.");
-            return;
-        }
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                window.location.href = "Dashboard.html"
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // console.error("error signing in" , errorCode , errorMessage)
-            });
+                console.log(user)
 
-    })
-} else {
-    // console.error("login button not found");
-}
+                onAuthStateChanged(auth, (user) => {
+
+                    if (user) {
+                        window.location.href = "pages/Dashboard.html"
+
+                        // ...
+                    }
+
+                })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        // console.error("error signing in" , errorCode , errorMessage)
+                    });
+
+            })
+    } else {
+
+    }
+

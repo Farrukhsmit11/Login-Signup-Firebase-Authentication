@@ -1,7 +1,8 @@
 /* Sidebar styling */
 
 body {
-  font-family: Poppins;
+  font-family: Poppins !important;
+  font-weight: 600;
   margin: 0;
   padding: 0;
 }
@@ -35,8 +36,12 @@ body {
   padding: 20px 18px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ccc;
+}
 
+.sidebar .sidebar-header h1 {
+  font-size: 32px;
+  color: white;
+  font-family: Poppins;
 }
 
 .sidebar-header .header-logo {
@@ -141,7 +146,7 @@ body {
 .category-table th,
 .category-table td {
   padding: 14px 18px;
-  text-align: center;
+  /* text-align: center; */
   box-sizing: border-box;
 }
 
@@ -158,8 +163,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 6px 19px;
+  /* margin-bottom: 20px; */
+  /* padding: 6px 19px; */
 }
 
 .header-title h1 {
@@ -170,11 +175,19 @@ body {
 
 
 #add-category-button {
+  background-color: #007bff;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
-  font-family: Poppins;
-  font-weight: 500;
+  justify-content: center;
 
 }
 
@@ -284,7 +297,7 @@ body {
 
 .delete-button {
 
-  color: #ef4444;
+  color: #2f1d42;
   cursor: pointer;
 
 }
@@ -307,9 +320,18 @@ body {
   font-family: Poppins;
 }
 
+#description-input {
+
+  height: 151px;
+  font-family: Poppins;
+
+}
+
+/* 
 .description-input {
   font-family: Poppins;
-}
+  height: 214px;
+} */
 
 .category-icons {
   display: flex;
@@ -331,7 +353,23 @@ body {
 
 
 
-/* PRODUCTS PAGE STYLING ////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRODUCTS PAGE STYLING ////////////////////////// 
 
 
 #add-products-button {
@@ -339,9 +377,9 @@ body {
   align-items: center;
   gap: 11px;
   font-family: Poppins;
-  font-weight: 6000;
   justify-content: center;
   width: 172px;
+  height: 50px;
 }
 
 
@@ -352,8 +390,9 @@ body {
 }
 
 .header-heading h1 {
+  text-align: center;
   font-family: Poppins;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 36px;
 }
 
@@ -363,22 +402,26 @@ body {
 }
 
 
-/* inputs */
-
-#product-name-input,
+/* inputs *
+ #product-name-input,
 #product-detail-input,
-#product-description-input,
 #product-category-input {
   font-family: Poppins;
   font-weight: 600;
-}
+} 
 
-/*  */
+ #product-description-input {
+  font-family: Poppins;
+  font-weight: 600;
+  height: 211px;
+} 
+
+
 
 
 /* label heading */
 
-#product-name-heading {
+/* #product-name-heading {
   font-family: Poppins;
   font-weight: 600;
 }
@@ -403,13 +446,13 @@ body {
   font-weight: 600;
 }
 
-/*  */
+
 
 .products-submit-button {
   width: 100%;
   font-family: 'Poppins';
   font-size: 13px;
-}
+} */
 
 #submit-button {
   display: flex;
@@ -427,45 +470,141 @@ body {
 }
 
 .product-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Adds space between the button and table */
+  display: flex;
+  /* flex-direction: column; */
+  /* gap: 20px; */
 }
 
 .add-product {
-    margin-bottom: 20px; /* Ensures space below the button */
+  margin-bottom: 20px;
 }
 
 
 .product-table-container {
-    width: 100%;
-    overflow-x: auto;
-    /* padding: 20px; Adds padding around the table */
+  width: 100%;
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+
 }
 
 .product-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
 }
 
-.product-table th, .product-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
 }
 
 .product-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    text-transform: uppercase;
+  background-color: #f4f4f4;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: Poppins;
 }
 
-/* .product-table tbody tr:nth-child(even) {
-    /* background-color: #f9f9f9; */
-/* }  */
 
 .product-table tbody tr:hover {
-    background-color: #e2e2e2;
-    cursor: pointer;
+  background-color: #e2e2e2;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.modal-title {
+  font-family: Poppins;
+  text-align: center;
+}
+
+#product-price-input {
+  font-family: Poppins;
+}
+
+.edit-icon {
+  font-size: 17px;
+}
+
+.delete-icon {
+  font-size: 17px;
+}
+
+#product-list {
+  font-family: Poppins;
+}
+
+.upload-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border: 2px dashed #aaa;
+  border-radius: 15px;
+  background: #f9f9f9;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: auto;
+}
+
+.upload-box:hover {
+  background: #f1f1f1;
+  border-color: #333;
+}
+
+.img-area {
+  pointer-events: none;
+}
+
+.img-area i {
+  font-size: 50px;
+  color: #555;
+}
+
+.img-area h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+  color: #333;
+}
+
+.img-area p {
+  font-size: 14px;
+  color: #777;
+}
+
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.category-label {
+  font-family: Poppins;
+  font-weight: 600;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit;
+}
+
+
+
+#action-heading {
+  text-align: center;
 }
