@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products </title>
-    <link rel="stylesheet" href="Dashboard.css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
-        rel="stylesheet" />
-
+    <link rel="stylesheet" href="../Pages/Dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,13 +27,15 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 
+    <link rel="stylesheet" href="../Pages/Products.css">
+
 
 </head>
 
 
 <body>
 
-    <div class="layout-container">
+    <!-- <div class="admin-wrapper">
         <aside class="sidebar">
             <header class="sidebar-header">
                 <h1>Admin Panel</h1>
@@ -53,14 +53,13 @@
                     </li>
 
                     <li class="sidebar-items">
-                        <a href="Category.html" class="sidebar-links">
+                        <a href="../Pages/Category.html" class="sidebar-links">
                             <span class="material-symbols-outlined">
                                 category
                             </span>
                             Category
                         </a>
                     </li>
-
                     <li class="sidebar-items">
                         <a href="../login.html" class="sidebar-links" id="signout-button">
                             <span class="material-symbols-outlined">logout</span>
@@ -69,13 +68,165 @@
                     </li>
                 </ul>
             </div>
-        </aside>
+        </aside> -->
 
 
-
-
-
+        
         <main class="main-content">
+            <div class="content-wrapper">
+                <header class="main-header">
+                    <div class="header-title">
+                        <h1 class="products-h1">Products</h1>
+                        <button id="add-products-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#products-modal">
+                            <i class="fa-solid fa-plus add-icon"></i> Add Products
+                        </button>
+                    </div>
+                </header>
+                <div class="modal fade" id="products-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Product</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form id="product-form">
+                                    <div class="mb-3">
+                                        <label id="product-name-heading" for="Product-Name"
+                                            class="col-form-label">Product
+                                            Name</label>
+                                        <input type="text" class="form-control" id="product-name-input" required>
+                                        <span id="name-error" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="product-category-input" class="col-form-label category-label">
+                                            Product Category
+                                        </label>
+                                        <select id="product-category-input" class="form-select" required>
+                                            <option value="">Select Category</option>
+                                        </select>
+                                        <span id="category-error" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label id="product-detail-heading" for="Product-Detail"
+                                            class="col-form-label">Product
+                                            Detail</label>
+                                        <input type="text" class="form-control" id="product-detail-input" required>
+                                        <span id="detail-error" class="text-danger"></span>
+                                    </div>
+
+
+
+                                    <div class="mb-3">
+                                        <label id="product-price-heading" for="product-price" class="col-form-label">
+                                            Product
+                                            Price</label>
+                                        <input type="number" class="form-control" id="product-price-input" required />
+                                        <span id="price-error" class="text-danger"></span>
+                                    </div>
+
+
+                                    <div class="mb-3">
+                                        <label id="product-description-heading" for="product-description"
+                                            class="col-form-label">Product Description</label>
+                                        <textarea class="form-control" id="product-description-input"></textarea>
+                                        <span id="description-error" class="text-danger"></span>
+                                    </div>
+                                    <button onclick="" id="submit-button" type="submit"
+                                        class="btn btn-primary btn-block">
+                                        Submit
+                                    </button>
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class=" product-content">
+                <div class="add-product">
+                </div>
+                <div class="product-table-container">
+                    <table class="product-table">
+                        <thead>
+                            <tr>
+                                <th>Product name</th>
+                                <th>Product Detail</th>
+                                <th>Product Description</th>
+                                <th>Product Category</th>
+                                <th>Product Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-list">
+                            <tr>
+                                <td class="border px-4 py-2">Mobile</td>
+                                <td class="border px-4 py-2">Laptop</td>
+                                <td class="border px-4 py-2">Car</td>
+                                <td class="border px-4 py-2">Moten</td>
+                                <td class="border px-4 py-2">ii</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+
+
+
+
+
+    <!-- 
+    
+        <aside class=" sidebar">
+                                        <header class="sidebar-header">
+                                            <h1>Admin Panel</h1>
+                                        </header>
+
+                                        <div class="social-links">
+                                            <ul class="sidebar-list">
+                                                <li class="sidebar-items">
+                                                    <a href="Products.html" class="sidebar-links active">
+                                                        <span class="material-symbols-outlined">
+                                                            shopping_bag
+                                                        </span>
+                                                        Products
+                                                    </a>
+                                                </li>
+
+                                                <li class="sidebar-items">
+                                                    <a href="Category.html" class="sidebar-links">
+                                                        <span class="material-symbols-outlined">
+                                                            category
+                                                        </span>
+                                                        Category
+                                                    </a>
+                                                </li>
+
+                                                <li class="sidebar-items">
+                                                    <a href="../login.html" class="sidebar-links" id="signout-button">
+                                                        <span class="material-symbols-outlined">logout</span>
+                                                        Sign Out
+                                                    </a>
+                                                </li>
+                                            </ul> -->
+    <!-- </div> -->
+    <!-- </aside> -->
+    <!--  -->
+
+
+
+
+    <!-- <main class="main-content">
             <header class="main-header">
                 <div class="header-title">
                     <h1>Products</h1>
@@ -85,8 +236,8 @@
                     </button>
                 </div>
             </header>
-
-
+ -->
+    <!-- 
             <div class="modal fade" id="products-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog modal-dialog-centered">
@@ -120,8 +271,8 @@
                                     <label id="product-detail-heading" for="Product-Detail"
                                         class="col-form-label">Product
                                         Detail</label>
-                                    <input type="text" class="form-control" id="product-detail-input" required>
-                                    <span id="detail-error" class="text-danger"></span>
+                                    <input type="text" class="form-control" id="product-detail-input" required> -->
+    <!-- <span id="detail-error" class="text-danger"></span>
                                 </div>
 
 
@@ -146,13 +297,13 @@
                             </button>
                        </div>
                     </form>
-                </div>
-            </div>
-        </div>
-        
-        
+                </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
 
-                            <section class=" product-content">
+
+
+    <!-- <section class=" product-content">
                                     <div class="add-product">
                                     </div>
                                     <div class="product-table-container">
@@ -166,23 +317,22 @@
                                                     <th>Product Price</th>
                                                     <th>Actions</th>
                                                     <!-- <th></th> -->
-                                                </tr>
-                                            </thead>
-                                            <tbody id="product-list">
-                                                <tr>
-                                                    <td class="border px-4 py-2">Mobile</td>
-                                                    <td class="border px-4 py-2">Laptop</td>
-                                                    <td class="border px-4 py-2">Car</td>
-                                                    <td class="border px-4 py-2">Moten</td>
-                                                    <td class="border px-4 py-2">ii</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    </section>
+    <!-- </tr> -->
+    <!-- </thead> -->
+    <!-- <tbody id="product-list"> -->
+    <!-- <tr> -->
+    <!-- <td class="border px-4 py-2">Mobile</td> -->
+    <!-- <td class="border px-4 py-2">Laptop</td> -->
+    <!-- <td class="border px-4 py-2">Car</td> -->
+    <!-- <td class="border px-4 py-2">Moten</td> -->
+    <!-- <td class="border px-4 py-2">ii</td> -->
+    <!-- </tr> -->
+    <!-- </tbody> -->
+    <!-- </table> -->
+    <!-- </div> -->
+    <!-- </section> -->
 
-        </main>
-    </div>
+    <!-- </main> -->
 
 
 

@@ -278,5 +278,3 @@ const modalElement1 = document.getElementById("products-modal");
 modalElement1.addEventListener("show.bs.modal", async function () {
     loadCategoryDropdown();
 });
-
-

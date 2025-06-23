@@ -31,12 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
+            const emailError = document.getElementById("email-error");
+
+
+            let hasError = true
+
+            if (!email) {
+                emailError.textContent = "email is already in use";
+                hasError = false
+
+            }
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
-                    window.location.href = "login.html";
+                    // window.location.href = "Pages/";
                     alert("Signup sucessfull")
                     // ...
                 })
@@ -46,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.error("Error signing up", errorCode, errorMessage)
                     // ..
                 });
+
+
+
 
         });
     } else {
@@ -63,30 +76,19 @@ if (loginButton) {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user)
-
-                onAuthStateChanged(auth, (user) => {
-
-                    if (user) {
-                        window.location.href = "pages/Dashboard.html"
-
-                        // ...
-                    }
-
-                })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        // console.error("error signing in" , errorCode , errorMessage)
-                    });
-
+                window.location.href = "pages/Products.html"
             })
-    } else {
+            .catch((error) => {
 
-    }
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error("error signing in", errorCode, errorMessage)
+            });
+    })
+}
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category </title>
-    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="../Pages/Dashboard.css">
     <link
         href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
         rel="stylesheet" />
@@ -34,7 +34,127 @@
 
 <body>
 
-    <div class="layout-container">
+
+
+    <!-- 
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h1 class="product-heading">Admin Panel</h1>
+            </header>
+
+            <div class="social-links">
+                <ul class="sidebar-list">
+                    <li class="sidebar-social-links">
+                        <a href="Products.html" class="sidebar-links">
+                            <span class="material-symbols-outlined">
+                                shopping_bag
+                            </span>
+                            Products
+                        </a>
+                    </li>
+
+                    <li class="sidebar-social-links">
+                        <a href="Category.html" class="sidebar-links active">
+                            <span class="material-symbols-outlined">
+                                category
+                            </span>
+                            Category
+                        </a>
+                    </li>
+
+                    <li class="sidebar-social-links">
+                        <a href="../login.html" class="sidebar-links" id="signout-button1">
+                            <span class="material-symbols-outlined">logout</span>
+                            Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside> -->
+
+    <main id="category-content" class="category-content">
+        <header class="main-header">
+            <div class="header-title">
+                <h1 class="category-heading">Category</h1>
+                <button id="add-category-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#category-modal">
+                    <i class="fa-solid fa-plus add-icon"></i> Add Category
+                </button>
+            </div>
+        </header>
+        <div class="modal fade" id="category-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="category-title" id="exampleModalLabel">Add Category</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal-form">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="name-input" class="form-control" required />
+                                <label class="form-label" for="name2">Name</label>
+                                <span id="name-input-error"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea name="description" id="description-input" class="form-control"></textarea>
+                                <label class="form-label" for="email2">Description</label>
+                                <span id="description-input-error"></span>
+                            </div>
+                            <button id="submit-btn" type="submit" class="btn btn-primary btn-block">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-table-container">
+            <table class="category-table">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border font-size: 13px"> Name</th>
+                        <th class="px-4 py-2 border"> Description</th>
+                        <th id="action-heading" class="px-4 py-2">Actions</th>
+                    </tr>
+
+                </thead>
+                <tbody id="form-list">
+                    <tr>
+                        <td>
+                            <div class="category-icons flex gap-2 justify-center">
+                                <i class="fa-solid fa-trash delete-icon"></i>
+                                <i class="fa-solid fa-pen-to-square edit-icon"></i>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--    
         <aside class="sidebar">
             <header class="sidebar-header">
                 <h1>Admin Panel</h1>
@@ -81,14 +201,14 @@
                         <i class="fa-solid fa-plus add-icon"></i> Add Category
                     </button> -->
 
-                    <button id="add-category-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+    <!-- <button id="add-category-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#category-modal">
                         <i class="fa-solid fa-plus add-icon"></i> Add Category
                     </button>
                 </div>
-            </header>
+            </header> -->
 
-            <div class="modal fade" id="category-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <!-- <div class="modal fade" id="category-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -115,16 +235,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
-            <section class="category-content">
+    <!-- <section class="category-content">
                 <div class="add-category">
                     <div class="category-input" style="margin-top: 10px;">
                     </div>
-                </div>
+                </div> -->
 
-                <div class="category-table-container">
+    <!-- <div class="category-table-container">
                     <table class="category-table">
                         <thead>
                             <tr>
@@ -133,13 +253,13 @@
                                 <th id="action-heading" class="px-4 py-2">Actions</th>
                             </tr>
 
-                        </thead>
-                        <tbody id="form-list">
+                        </thead> -->
+    <!-- <tbody id="form-list">
                             <tr>
                                 <td>
                                     <div class="category-icons flex gap-2 justify-center">
-                                        <i class="fa-solid fa-trash delete-icon"></i>
-                                        <i class="fa-solid fa-pen-to-square edit-icon"></i>
+                                        <i class="fa-solid fa-trash delete-icon"></i> -->
+    <!-- <i class="fa-solid fa-pen-to-square edit-icon"></i>
                                     </div>
                                 </td>
                             </tr>
@@ -147,9 +267,10 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
-        </main>
-    </div>
+            </section> -->
+    <!-- </main> -->
+    <!-- </div> -->
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

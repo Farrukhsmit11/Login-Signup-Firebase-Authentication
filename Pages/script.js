@@ -1,83 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+function loadContent(page) {
+    const main = document.getElementById("main-content");
+    const category = document.getElementById("category-content")
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard </title>
-    <link rel="stylesheet" href="../Pages/Dashboard.css">
-    <!-- <link rel="stylesheet" href="../Pages/Products.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
-
-    <div class="admin-wrapper">
-        <aside class="sidebar">
-            <header class="sidebar-header">
-                <h1>Admin Panel</h1>
-            </header>
-
-            <div class="social-links">
-                <ul class="sidebar-list">
-
-
-                    <li class="sidebar-items">
-                        <a href="Dashboard.html" class="sidebar-links ">
-                            <span class="material-symbols-outlined">
-                                shopping_bag
-                            </span>
-                            Dashboard
-                        </a>
-                    </li>
-
-
-
-                    <li class="sidebar-items">
-                        <a onclick="loadContent('Products')" href="Dashboard.html" class="sidebar-links active">
-                            <span class="material-symbols-outlined">
-                                shopping_bag
-                            </span>
-                            Products
-                        </a>
-                    </li>
-
-                    <li class="sidebar-items">
-                        <a onclick="loadContent('Category')" class="sidebar-links">
-                            <span class="material-symbols-outlined">
-                                category
-                            </span>
-                            Category
-                        </a>
-                    </li>
-                    <li class="sidebar-items">
-                        <a href="../login.html" class="sidebar-links" id="signout-button">
-                            <span class="material-symbols-outlined">logout</span>
-                            Sign Out
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </aside>
-        <main id="main-content" class="main-content">
+    if (page === "Dashboard") {
+        main.innerHTML = `Example Dashboard Content`;
+    } else if (page === "Products") {
+        main.innerHTML = `
+           <main class="main-content">
             <div class="content-wrapper">
                 <header class="main-header">
                     <div class="header-title">
@@ -148,7 +77,7 @@
                                         class="btn btn-primary btn-block">
                                         Submit
                                     </button>
-                            </div>
+                               </div>
                             </form>
                         </div>
                     </div>
@@ -182,17 +111,80 @@
                 </div>
             </section>
         </main>
+    </div>
+        `;
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-            crossorigin="anonymous"></script>
+    } if (page === "Category") {
+        category.innerHTML = `
+        
+        
+    <main class="category-content">
+        <header class="main-header">
+            <div class="header-title">
+                <h1 class="category-heading">Category</h1>
+                <button id="add-category-button" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#category-modal">
+                    <i class="fa-solid fa-plus add-icon"></i> Add Category
+                </button>
+            </div>
+        </header>
+        <div class="modal fade" id="category-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="category-title" id="exampleModalLabel">Add Category</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal-form">
+                            <div class="form-floating mb-3">
+                                <input type="text" id="name-input" class="form-control" required />
+                                <label class="form-label" for="name2">Name</label>
+                                <span id="name-input-error"></span>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea name="description" id="description-input" class="form-control"></textarea>
+                                <label class="form-label" for="email2">Description</label>
+                                <span id="description-input-error"></span>
+                            </div>
+                            <button id="submit-btn" type="submit" class="btn btn-primary btn-block">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <script src="script.js"></script>
-        <script type="module" src="../Pages/Products.js"></script>
+        <div class="category-table-container">
+            <table class="category-table">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border font-size: 13px"> Name</th>
+                        <th class="px-4 py-2 border"> Description</th>
+                        <th id="action-heading" class="px-4 py-2">Actions</th>
+                    </tr>
 
+                </thead>
+                <tbody id="form-list">
+                    <tr>
+                        <td>
+                            <div class="category-icons flex gap-2 justify-center">
+                                <i class="fa-solid fa-trash delete-icon"></i>
+                                <i class="fa-solid fa-pen-to-square edit-icon"></i>
+                            </div>
+                        </td>
+                    </tr>
 
-</body>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    </div>
+        `;
+    }
 
-</html>
+}
