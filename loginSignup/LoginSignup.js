@@ -1,20 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDyPsgWePL-K1nWB5Pv3oD07Sk2vFmXEfQ",
-    authDomain: "login-signup-authenticat-abda5.firebaseapp.com",
-    projectId: "login-signup-authenticat-abda5",
-    storageBucket: "login-signup-authenticat-abda5.firebasestorage.app",
-    messagingSenderId: "847526541668",
-    appId: "1:847526541668:web:93411ea12d81043b032271",
-    measurementId: "G-R13N1JRJRC"
-};
-
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
+import { auth } from "../utils/firebaseConfig.js";
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
 
 // LOGIN SIGNUP CODE AUTHENTICATION
 
@@ -31,35 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            const emailError = document.getElementById("email-error");
-
-
-            let hasError = true
-
-            if (!email) {
-                emailError.textContent = "email is already in use";
-                hasError = false
-
-            }
 
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
-                    // window.location.href = "Pages/";
+                    window.location.href = "../wrapper/Wrapper.html";
                     alert("Signup sucessfull")
-                    // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.error("Error signing up", errorCode, errorMessage)
-                    // ..
                 });
-
-
-
-
         });
     } else {
         // console.error("Signup button not founf");
@@ -81,10 +53,9 @@ if (loginButton) {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user)
-                window.location.href = "pages/Products.html"
+                window.location.href = "../wrapper/Wrapper.html";
             })
             .catch((error) => {
-
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.error("error signing in", errorCode, errorMessage)
@@ -92,3 +63,4 @@ if (loginButton) {
     })
 }
 
+// ../pages/Products.html

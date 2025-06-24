@@ -1,26 +1,8 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"
+import { db } from "../utils/firebaseConfig.js";;
 import { getFirestore, addDoc, collection, serverTimestamp, getDocs, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDyPsgWePL-K1nWB5Pv3oD07Sk2vFmXEfQ",
-    authDomain: "login-signup-authenticat-abda5.firebaseapp.com",
-    projectId: "login-signup-authenticat-abda5",
-    storageBucket: "login-signup-authenticat-abda5.firebasestorage.app",
-    messagingSenderId: "847526541668",
-    appId: "1:847526541668:web:93411ea12d81043b032271",
-    measurementId: "G-R13N1JRJRC"
-};
-
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-
-
-
-
-
-async function loadCategoryDropdown(selectedCategory = "") {
+async function loadCategoryDropdown() {
     const dropdown = document.getElementById("product-category-input");
     dropdown.innerHTML = `<option value="">Select Category</option>`;
 
@@ -86,12 +68,12 @@ submit1.addEventListener("click", async function (event) {
         detailError.innerText = "";
     }
 
-    if (category === "") {
-        categoryError.innerText = "Please Select Correct Category";
-        isValid = false
-    } else {
-        categoryError.innerText = "";
-    }
+    // if (category === "") {
+    //     categoryError.innerText = "Please Select Correct Category";
+    //     isValid = false
+    // } else {
+    //     categoryError.innerText = "";
+    // }
 
     if (price === "") {
         priceError.innerText = "Please Enter the Product Price";
@@ -224,17 +206,15 @@ async function renderTasks() {
 
         const editButton = newRow1.querySelector(".edit-button");
         editButton.addEventListener("click", async function () {
-            await loadCategoryDropdown();
+            // await loadCategoryDropdown();
             // console.log('category', document.getElementById("product-category-input"), category)
 
             document.getElementById("product-name-input").value = name;
-            document.getElementById("product-category-input").value = category;
+            // document.getElementById("product-category-input").value = category;
             document.getElementById("product-detail-input").value = detail;
             document.getElementById("product-description-input").value = description;
 
             document.getElementById("product-price-input").value = price;
-
-
 
             submit1.textContent = "Update fields"
 

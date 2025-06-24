@@ -1,22 +1,6 @@
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"
-import { getFirestore, getDocs, deleteDoc, addDoc, updateDoc, serverTimestamp, collection, doc } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyDyPsgWePL-K1nWB5Pv3oD07Sk2vFmXEfQ",
-    authDomain: "login-signup-authenticat-abda5.firebaseapp.com",
-    projectId: "login-signup-authenticat-abda5",
-    storageBucket: "login-signup-authenticat-abda5.firebasestorage.app",
-    messagingSenderId: "847526541668",
-    appId: "1:847526541668:web:93411ea12d81043b032271",
-    measurementId: "G-R13N1JRJRC"
-};
-
-
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-
+import { db } from "../utils/firebaseConfig.js";
+import { getDocs, deleteDoc, addDoc, updateDoc, serverTimestamp, collection, doc } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
 
 let isEditMode = false;
 let editDocId = null;
@@ -74,6 +58,8 @@ submit.addEventListener("click", async function (event) {
 
 
 
+    // yeh code 2 kam krta hai agar hume dit mode main 
+
 
     try {
         if (isEditMode && editDocId) {
@@ -89,7 +75,7 @@ submit.addEventListener("click", async function (event) {
 
             submit.textContent = "Add Task";
 
-            const modalElement = document.getElementById("products-modal");
+            const modalElement = document.getElementById("category-modal");
             const modalinstance = bootstrap.Modal.getInstance(modalElement);
             if (modalinstance) {
                 modalinstance.hide();
@@ -100,13 +86,14 @@ submit.addEventListener("click", async function (event) {
         } else {
             const docRef = await addDoc(collection(db, "categories"), {
                 name,
-
                 createdAt: serverTimestamp(),
                 description,
             });
             console.log("Document written with ID: ", docRef.id);
+            console.log("data sended sucessfully");
 
-            const modalElement = document.getElementById("products-modal")
+
+            const modalElement = document.getElementById("category-modal")
             const modalinstance = bootstrap.Modal.getInstance(modalElement)
             if (modalinstance) {
                 modalinstance.hide()
@@ -153,7 +140,7 @@ async function rendertasks() {
         </td>
    `;
 
-        formlist.appendChild(newRow)
+        formlist.appendChild(newRow);
 
 
         // delete function

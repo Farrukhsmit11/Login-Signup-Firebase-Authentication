@@ -1,0 +1,259 @@
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.category-heading {
+  font-family: Poppins;
+}
+
+
+.category-title {
+  font-size: 18px;
+}
+
+.sidebar-link1,
+.sidebar-link2,
+.sidebar-links .category h1 {
+  font-family: Poppins;
+}
+
+
+.category-table-container {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  overflow-x: auto;
+}
+
+.modal-content {
+  width: 584px;
+}
+
+
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  list-style: none;
+}
+
+.category-table th {
+  background: #f5f6fa;
+  color: #2f1d42;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 2px solid #eee;
+  /* font-family: Montserrat; */
+}
+
+.category-table th,
+.category-table td {
+  padding: 14px 18px;
+  /* text-align: center; */
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.category-table tr {
+  transition: background 0.2s;
+}
+
+.category-table tbody tr:hover {
+  background: #f0f4ff;
+}
+
+
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+
+#add-category-button {
+  background-color: #007bff;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  font-family: Poppins;
+
+}
+
+#submit-btn {
+  width: 100%;
+  font-family: 'Poppins';
+  font-size: 13px;
+}
+
+.actions-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.delete-icon {
+  color: #2f1d42;
+}
+
+
+#modal1 {
+  height: 100%;
+  width: 100%;
+}
+
+
+.add-icon {
+  font-size: 13px;
+  display: flex;
+}
+
+
+.list-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.list-item-content {
+  flex: 1;
+}
+
+.title-description {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-description h2,
+.title-description p {
+  margin: 0;
+  font-size: 16px;
+  font-family: Montserrat;
+}
+
+#form-list {
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.border {
+  border: 1px solid #ddd;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.actions-cell {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.actions-cell button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin: 0 5px;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+
+.delete-button {
+
+  color: #2f1d42;
+  cursor: pointer;
+
+}
+
+.edit-button {
+  cursor: pointer;
+}
+
+
+.name-input {
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.price-input {
+  font-family: Montserrat;
+}
+
+.quantity-input {
+  font-family: Montserrat;
+}
+
+#description-input {
+
+  height: 151px;
+  font-family: Montserrat;
+
+}
+
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+#icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+#category-modal {
+  font-weight: 500;
+}
+
+
+.category-content {
+  flex: 1;
+  padding: 20px;
+}
+

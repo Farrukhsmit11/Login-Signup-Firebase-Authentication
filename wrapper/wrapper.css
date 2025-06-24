@@ -25,13 +25,26 @@ body {
   flex-direction: column;
   flex-shrink: 0;
   transition: width 0.3s ease;
-  /* height: 100vh; */
+  height: 100vh;
   border-right: 1px solid var(--color-border-hr);
   box-shadow: 0 3px 9px var(--color-shadow);
   background: #2f1d42;
   font-family: Montserrat;
+  overflow-y: auto;
 }
 
+.sidebar.::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #a90d0d;
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 .admin-wrapper {
   display: flex;
@@ -93,10 +106,11 @@ body {
   transition: 0.3s ease;
   color: white;
   font-size: 16px;
-  font-f
+  font-family: Montserrat;
 }
 
-.sidebar-list .sidebar-links:is(:hover, .active) {
+.sidebar-list .sidebar-links:hover,
+.sidebar-links:active {
   color: #fff;
   background: #3C2A5C;
 }
@@ -131,12 +145,14 @@ body {
   padding: 20px;
 }
 
-.category-heading {
-  font-family: Poppins;
+#category-form{
+  font-family: Montserrat;
 }
 
 
+
 .category-title {
+  font-family: Montserrat;;
   font-size: 18px;
 }
 
@@ -177,7 +193,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   border-bottom: 2px solid #eee;
-  /* font-family: Montserrat; */
+  font-family: Montserrat;
 }
 
 .category-table th,
@@ -185,7 +201,7 @@ body {
   padding: 14px 18px;
   /* text-align: center; */
   box-sizing: border-box;
-  font-family: Poppins;
+  /* font-family: Poppins; */
 }
 
 .category-table tr {
@@ -226,13 +242,12 @@ body {
   gap: 12px;
   align-items: center;
   justify-content: center;
-  font-family: Poppins;
+  /* font-family: Poppins; */
 
 }
 
 #submit-btn {
   width: 100%;
-  font-family: 'Poppins';
   font-size: 13px;
 }
 
@@ -393,7 +408,7 @@ body {
 
 .category-content {
   flex: 1;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 
@@ -491,7 +506,7 @@ body {
   display: flex;
   /* flex-direction: column; */
 /* gap: 20px; */
-}
+
 
 .add-product {
   margin-bottom: 20px;
@@ -625,4 +640,10 @@ select:focus {
 
 #action-heading {
   text-align: center;
+}
+
+.content {
+  flex: 1;
+  /* width: 100%; */
+  padding: 20px;
 }
