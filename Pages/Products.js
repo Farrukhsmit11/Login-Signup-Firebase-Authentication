@@ -68,11 +68,11 @@ submit1.addEventListener("click", async function (event) {
         detailError.innerText = "";
     }
 
+
     if (category === "") {
         categoryError.innerText = "Please sleect category"
         isValid = false
     }
-
 
     if (price === "") {
         priceError.innerText = "Please Enter the Product Price";
@@ -255,4 +255,3 @@ const modalElement1 = document.getElementById("products-modal");
 modalElement1.addEventListener("show.bs.modal", async function () {
     loadCategoryDropdown();
 });
-
