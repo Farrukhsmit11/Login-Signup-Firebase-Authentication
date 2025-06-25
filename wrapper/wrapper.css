@@ -16,6 +16,11 @@ body {
 }
 
 
+:root {
+  --theme-color-ink-1: #fff;
+  --theme-color-nav-selected-bg: #4c4cfc;
+}
+
 
 .sidebar {
   position: relative;
@@ -33,18 +38,6 @@ body {
   overflow-y: auto;
 }
 
-.sidebar.::-webkit-scrollbar {
-  width: 8px;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: #a90d0d;
-  border-radius: 4px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 .admin-wrapper {
   display: flex;
@@ -110,9 +103,9 @@ body {
 }
 
 .sidebar-list .sidebar-links:hover,
-.sidebar-links:active {
-  color: #fff;
-  background: #3C2A5C;
+.sidebar-links.active {
+  color: var(--theme-color-ink-1);
+  background-color: var(--theme-color-nav-selected-bg);
 }
 
 .sidebar-button {
@@ -145,14 +138,15 @@ body {
   padding: 20px;
 }
 
-#category-form{
+#category-form {
   font-family: Montserrat;
 }
 
 
 
 .category-title {
-  font-family: Montserrat;;
+  font-family: Montserrat;
+  ;
   font-size: 18px;
 }
 

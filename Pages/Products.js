@@ -43,7 +43,7 @@ submit1.addEventListener("click", async function (event) {
     const nameError = document.getElementById("name-error");
     const descriptionError = document.getElementById("description-error");
     const detailError = document.getElementById("detail-error");
-    const categoryError = document.getElementById("category-error");
+    const categoryError = document.getElementById("category-error")
     const priceError = document.getElementById("price-error");
 
 
@@ -68,12 +68,11 @@ submit1.addEventListener("click", async function (event) {
         detailError.innerText = "";
     }
 
-    // if (category === "") {
-    //     categoryError.innerText = "Please Select Correct Category";
-    //     isValid = false
-    // } else {
-    //     categoryError.innerText = "";
-    // }
+    if (category === "") {
+        categoryError.innerText = "Please sleect category"
+        isValid = false
+    }
+
 
     if (price === "") {
         priceError.innerText = "Please Enter the Product Price";
@@ -83,8 +82,6 @@ submit1.addEventListener("click", async function (event) {
     }
     if (!isValid) return;
     console.log("Form is valid. Submitting...");
-
-
 
     try {
         if (isEdit && editid) {
@@ -258,3 +255,4 @@ const modalElement1 = document.getElementById("products-modal");
 modalElement1.addEventListener("show.bs.modal", async function () {
     loadCategoryDropdown();
 });
+

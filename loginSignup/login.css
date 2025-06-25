@@ -35,7 +35,7 @@
 
 
  .login-container {
-     width: 423px;
+     width: 488px;
      max-width: 90%;
      padding: 40px 35px;
      background: #fff;
@@ -84,9 +84,14 @@
 
  .register {
      display: flex;
-     align-items: center;
+     /* align-items: center; */
      gap: 9px;
      justify-content: center;
+     padding: 10px;
+ }
+
+ .register p{
+    font-family: Poppins;
  }
 
  .form-options {
@@ -104,7 +109,7 @@
  .toggle-password {
      position: absolute;
      top: 37%;
-     right: -20px;
+     right: 0px;
      transform: translate(-50%);
      cursor: pointer
  }

@@ -22,11 +22,13 @@
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="name-input" type="username" id="Username" placeholder=" Enter your Username" required>
+                <span id="username-error" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
                 <input class="email-input" type="email" id="email" placeholder="Enter your email" required>
+                <span id="email-error" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -34,6 +36,7 @@
                 <div class="password-wrapper">
                     <input class="password-input" type="password" id="password" placeholder="Enter your password"
                         required>
+                    <span id="password-error" class="text-danger"></span>
                     <i id="toggle-button" class="fa-solid fa-eye toggle-password"></i>
                 </div>
             </div>
