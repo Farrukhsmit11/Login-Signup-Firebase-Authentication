@@ -68,13 +68,7 @@ submit1.addEventListener("click", async function (event) {
         detailError.innerText = "";
     }
 
-    // if (category === "") {
-    //     categoryError.innerText = "Please Select Correct Category";
-    //     isValid = false
-    // } else {
-    //     categoryError.innerText = "";
-    // }
-
+    
     if (price === "") {
         priceError.innerText = "Please Enter the Product Price";
         isValid = false
