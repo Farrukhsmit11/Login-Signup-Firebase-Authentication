@@ -641,3 +641,14 @@ select:focus {
   /* width: 100%; */
   padding: 20px;
 }
+
+#loginToast {
+  font-family: Poppins;
+}
+
+#signout-toast-body {
+  font-family: Poppins;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

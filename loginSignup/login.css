@@ -46,7 +46,9 @@
  }
 
  .login-container h2 {
-     font-size: 26px;
+    font-family: Poppins;
+    font-weight: 600;
+     font-size: 27px;
  }
 
 
@@ -68,6 +70,16 @@
      padding-right: 10px;
 
  }
+
+ .forgot-password-text{
+    font-family: Poppins;
+ }
+
+
+ #email-label{
+    font-family: Poppins;
+ }
+
 
  .password-input {
      display: flex;
@@ -133,5 +145,21 @@
      font-size: 12px;
  }
 
+
+ #toast-body{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+ }
+
+ .check-icon{
+    display: flex;
+    align-items: center;
+
+ }
+
+ .signup-heading{
+    font-family: Poppins;
+ }
 
  

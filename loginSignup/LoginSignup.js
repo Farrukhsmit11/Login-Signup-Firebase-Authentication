@@ -31,15 +31,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then((userCredential) => {
                     // Signed up 
                     const user = userCredential.user;
-                    window.location.href = "../wrapper/Wrapper.html";
-                    alert("Signup sucessfull")
+
+
+                    const toast1 = document.getElementById("signupToast");
+                    const toastbody = document.getElementById("toast-body");
+                    toastbody.innerText = "Signup sucessful";
+                    const toast = new bootstrap.Toast(toast1);
+                    toast.show();
+                    // window.location.href = "../wrapper/Wrapper.html";
+                    // alert("Signup sucessfull")
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.error("Error signing up", errorCode, errorMessage)
-                });
+                    const toastElement2 = document.getElementById("signupToast");
+                    const toastBody = document.getElementById("toast-body");
+                    const toast = new bootstrap.Toast(toastElement2);
 
+
+                    if (error.code === "auth/email-already-in-use") {
+                        emailError.innerText = "Email already in use";
+                        formisValid = false
+                    } else {
+                        emailError.innerText = "";
+                    }
+
+
+                });
             if (username === "") {
                 usernameError.innerText = "Name is required"
                 formisValid = false
@@ -56,6 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 formisValid = false
 
             }
+
+            usernameError.innerText = "";
+            emailError.innerText = ""
+            passwordError.innerText = "";
+
 
 
         });
@@ -80,21 +104,23 @@ if (loginButton) {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
+                const toastElement = document.getElementById("loginToast");
+                const toastBody = document.getElementById("toast-body");
+                toastBody.innerHTML = `<i class="fa-solid fa-circle-check check-icon"></i>
+                   Login sucessfull
+                `;
+                const toast = new bootstrap.Toast(toastElement);
+                toast.show();
+
+                toastElement.addEventListener("show.bs.toast", function () {
+                    window.location.href = "../wrapper/Wrapper.html";
+                })
+
                 const user = userCredential.user;
                 // console.log(user)
 
-                const toastBody = document.getElementById("toast-body");
-                toastBody.innerText = "Login sucessfull"
-                const toastelement = document.getElementById("mytoast");
-                const toast = new bootstrap.Toast(toastelement);
-                toast.show();
 
-              
             })
-
-
-
-
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -114,4 +140,31 @@ if (loginButton) {
         }
     })
 }
+
+
+const signoutButton = document.getElementById("signout-button");
+
+if (signoutButton) {
+    signoutButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const signOutToast = document.getElementById("signoutToast");
+        const toastBody = document.getElementById("signout-toast-body");
+
+        toastBody.innerHTML = `
+        <i class="fa-solid fa-circle-check check-icon"></i>
+        Signout sucessfully
+        `;
+        const toast = new bootstrap.Toast(signOutToast);
+        toast.show();
+
+        signOutToast.addEventListener("show.bs.toast", function () {
+            window.location.href = "../index.html";
+        })
+
+
+    });
+};
+
+
 

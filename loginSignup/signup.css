@@ -64,10 +64,15 @@ body {
 .login {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    font-family: Poppins;
+    padding: 19px;
+
     gap: 7px;
 }
 
+
+/* 
 .signup-container {
     background: rgba(255, 255, 255, 0.12);
     padding: 2.5rem 2rem;
@@ -78,16 +83,21 @@ body {
     width: 100%;
     max-width: 360px;
     box-sizing: border-box;
-}
+} */
 
 .Signup-container {
-    width: 423px;
+    width: 502px;
     /* max-width: 40%; */
     padding: 40px 35px;
     background: #FFF;
     border-radius: 5px;
     /* box-shadow: 10px 10px 20px rgba(, green, blue, alpha); */
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.Signup-container h1{
+    font-family: Poppins;
+    font-weight: 600;
 }
 
 .password-icon {
@@ -103,7 +113,16 @@ body {
 
 .toggle-password {
     position: absolute;
-    right: -9px;
+    right: 7px;
     top: 17px;
     cursor: pointer;
+}
+
+
+.form-group{
+    font-family: Poppins;
+}
+
+.signup-heading{
+    font-family: Poppins;
 }
